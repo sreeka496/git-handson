@@ -295,4 +295,38 @@ $ git branch -d GitNewBranch
 Deleted branch GitNewBranch (was 69b6c2f).
 
 
+_________________________
+
+4
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git branch GitWork
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git checkout -b GitWork
+fatal: A branch named 'GitWork' already exists.
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitWork)
+$ touch hello.xml
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitWork)
+$ git add .
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitWork)
+$ git commit -m 'Adding hello.xml to GitWork branch'
+[GitWork bd60584] Adding hello.xml to GitWork branch
+ 1 file changed, 6 insertions(+)
+ create mode 100644 hello.xml
+
 
