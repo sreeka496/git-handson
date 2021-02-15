@@ -1,0 +1,298 @@
+1
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On
+$ notepad++
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On
+$ notepad++.exe bash -profile
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On
+$ notepad++.exe bash -profile
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On
+$ git config --global core.editor "notepad++.exe -multiInst -nosession"
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On
+$ git config --global -e
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On
+$ git init
+Initialized empty Git repository in C:/Users/ppgir/OneDrive/Desktop/Git Hands On/.git/
+
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ ls -al
+total 9
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:35  ./
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:03  ../
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:35  .git/
+-rw-r--r-- 1 ppgir 197609 47 Feb 15 15:32 'new 1.txt'
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ echo "Welcome to the version control" >> welcome.txt
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ ls -al
+total 14
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:37  ./
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:03  ../
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:35  .git/
+-rw-r--r-- 1 ppgir 197609 47 Feb 15 15:32 'new 1.txt'
+-rw-r--r-- 1 ppgir 197609 31 Feb 15 15:37  welcome.txt
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ cat welcome.txt
+Welcome to the version control
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new 1.txt
+        welcome.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git add welcome.txt
+warning: LF will be replaced by CRLF in welcome.txt.
+The file will have its original line endings in your working directory
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git commit
+[master (root-commit) b197f73] Simple check file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 welcome.txt
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new 1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git remote add origin https://github.com/sreeka496/git-handson.git
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 247 bytes | 123.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/sreeka496/git-handson.git
+ * [new branch]      master -> master
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 658 bytes | 3.00 KiB/s, done.
+From https://github.com/sreeka496/git-handson
+ * branch            master     -> FETCH_HEAD
+   b197f73..d723618  master     -> origin/master
+Updating b197f73..d723618
+Fast-forward
+ welcome.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+__________________________
+
+
+2
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ touch .gitignore
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ touch one.log
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git add .
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   new 1.txt
+
+$ git commit -m 'Another change'
+[master 9363e89] Another change
+ 2 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 new 1.txt
+
+
+
+___________________________
+
+3
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   new 1.txt
+
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git branch GitNewBranch
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   new 1.txt
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitNewBranch)
+$ git branch
+* GitNewBranch
+  master
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitNewBranch)
+$ touch login.html
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitNewBranch)
+$ git add .
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitNewBranch)
+$ git status
+On branch GitNewBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   login.html
+        new file:   one.log
+
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitNewBranch)
+$ git commit -m 'login file added'
+[GitNewBranch 69b6c2f] login file added
+ 2 files changed, 8 insertions(+)
+ create mode 100644 login.html
+ create mode 100644 one.log
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitNewBranch)
+$ git checkout master
+Switched to branch 'master'
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ ls -al
+total 15
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 16:42  ./
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:03  ../
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 16:42  .git/
+-rw-r--r-- 1 ppgir 197609  7 Feb 15 16:42  .gitignore
+-rw-r--r-- 1 ppgir 197609 47 Feb 15 16:42 'new 1.txt'
+-rw-r--r-- 1 ppgir 197609 38 Feb 15 15:43  welcome.txt
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (GitNewBranch)
+$ ls -al
+total 14
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 16:43 ./
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 15:03 ../
+drwxr-xr-x 1 ppgir 197609  0 Feb 15 16:43 .git/
+-rw-r--r-- 1 ppgir 197609 83 Feb 15 16:43 login.html
+-rw-r--r-- 1 ppgir 197609  0 Feb 15 16:43 one.log
+-rw-r--r-- 1 ppgir 197609 38 Feb 15 15:43 welcome.txt
+
+$git remote add origin https://github.com/sreeka496/git-handson.git
+
+$ git remote
+origin
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git push origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (10/10), 861 bytes | 71.00 KiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/sreeka496/git-handson.git
+   d723618..0b69643  master -> master
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ touch README.md
+
+//give anything in readme file
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git add .
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git commit -m 'Added README'
+[master 1ba43d4] Added README
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 287 bytes | 143.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/sreeka496/git-handson.git
+   0b69643..1ba43d4  master -> master
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git diff master GitNewBranch
+diff --git a/.gitignore b/.gitignore
+deleted file mode 100644
+index 6f23623..0000000
+--- a/.gitignore
++++ /dev/null
+@@ -1 +0,0 @@
+-one.log
+\ No newline at end of file
+diff --git a/README.md b/README.md
+deleted file mode 100644
+index 916d9e7..0000000
+--- a/README.md
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#AyApp
+-This is my app
+\ No newline at end of file
+diff --git a/new 1.txt b/new 1.txt
+deleted file mode 100644
+index d0f199a..0000000
+--- a/new 1.txt
++++ /dev/null
+@@ -1 +0,0 @@
+:
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git branch -a
+  GitNewBranch
+* master
+  remotes/origin/master
+
+ppgir@DESKTOP-N466BQ2 MINGW64 ~/OneDrive/Desktop/Git Hands On (master)
+$ git branch -d GitNewBranch
+Deleted branch GitNewBranch (was 69b6c2f).
+
+
+
